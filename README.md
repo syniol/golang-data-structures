@@ -15,6 +15,7 @@
 
 #### Links
  * [Microsoft .NET API Queue](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1.dequeue?view=net-8.0#system-collections-generic-queue-1-dequeue)
+ * [Microsoft .NET API Stack](https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=net-8.0)
 
 
 ##### Credits
