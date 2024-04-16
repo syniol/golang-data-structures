@@ -3,10 +3,7 @@ package data_structures
 import "testing"
 
 func TestQueue_Enqueue(t *testing.T) {
-	sut := Queue[string]{
-		elements: *new([]string),
-		size:     0,
-	}
+	sut := NewQueue[string]()
 
 	sut.Enqueue("syniol")
 	sut.Enqueue("limited")
@@ -17,10 +14,7 @@ func TestQueue_Enqueue(t *testing.T) {
 }
 
 func TestQueue_Peek(t *testing.T) {
-	sut := Queue[string]{
-		elements: *new([]string),
-		size:     0,
-	}
+	sut := NewQueue[string]()
 
 	_, err := sut.Peek()
 	if err == nil {

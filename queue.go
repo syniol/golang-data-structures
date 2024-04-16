@@ -11,6 +11,13 @@ func (EmptyQueueError) Error() string {
 	return "queue is empty"
 }
 
+func NewQueue[T any]() *Queue[T] {
+	return &Queue[T]{
+		elements: *new([]T),
+		size:     0,
+	}
+}
+
 func (q *Queue[T]) Enqueue(el T) {
 	q.elements = append(q.elements, el)
 	q.size = q.size + 1
