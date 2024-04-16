@@ -1,7 +1,20 @@
-# Data Structures in Golang
+# Data Structures in Golang <sup><i>Fundamental Principles in Computer Science</i></sup>
 
  * [Arrays & Slices](https://github.com/syniol/golang-data-structures/blob/main/example_arrays_slices_test.go)
  * [Queues](https://github.com/syniol/golang-data-structures/blob/main/queue.go)
+ * [Stacks](https://github.com/syniol/golang-data-structures/blob/main/stack.go)
+ * [Graph](https://github.com/syniol/golang-data-structures/blob/main/graph.go)
+
+## Array
+tbc
+
+
+## Slices
+tbc
+
+
+## Map
+tbc
 
 
 ## Queues
@@ -10,7 +23,10 @@
 
 ## Stacks
  * LIFO (last-in-first-out)
- * 
+ * Elements added at the top of the queue
+
+## Graphs
+tbc
 
 
 #### Links
