@@ -4,10 +4,6 @@ import (
 	"fmt"
 )
 
-// Ordered
-// Static size
-// Arrays are values by default (meaning passing a copy of variable in a function)
-
 func ExampleArraySizeAndDefinition() {
 	var numbers [10]int
 

@@ -7,15 +7,20 @@
 
 
 ## Array
-tbc
+ * Ordered
+ * Static size
+ * Arrays are values by default (meaning passing a copy of variable in a function)
 
 
 ## Slices
-tbc
+* Ordered
+* Dynamic size
+* Slice's element is a pointer to an Array
 
 
 ## Map
-tbc
+ * Unordered
+ * Pointer by default
 
 
 ## Queues
