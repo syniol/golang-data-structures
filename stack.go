@@ -11,7 +11,15 @@ func (StackEmptyError) Error() string {
 	return "stack is empty"
 }
 
-func NewStack[T any]() *Stack[T] {
+type Stacker[T any] interface {
+	Push(el T)
+	Peek() (el T, err error)
+	Pop() (el T, err error)
+	Count() int
+}
+
+// NewStack instantiates new instance of Stack Data Structure
+func NewStack[T any]() Stacker[T] {
 	return &Stack[T]{
 		elements: *new([]T),
 		count:    0,
@@ -22,6 +30,7 @@ func NewStack[T any]() *Stack[T] {
 func (s *Stack[T]) Push(el T) {
 	if s.count == 0 {
 		s.elements = append(s.elements, el)
+		s.count = 1
 
 		return
 	}
