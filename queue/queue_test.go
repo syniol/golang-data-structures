@@ -4,22 +4,22 @@ import "testing"
 
 func TestQueue_Enqueue(t *testing.T) {
 	sut := Queue[string]{
-		elements: *new([]string),
-		size:     0,
+		items: *new([]string),
+		size:  0,
 	}
 
 	sut.Enqueue("syniol")
 	sut.Enqueue("limited")
 
-	if len(sut.elements) != 2 {
+	if len(sut.items) != 2 {
 		t.Error("it was expecting two records in queue")
 	}
 }
 
 func TestQueue_Dequeue(t *testing.T) {
 	sut := Queue[string]{
-		elements: *new([]string),
-		size:     0,
+		items: *new([]string),
+		size:  0,
 	}
 
 	const firstItemInQueue = "syniol"
@@ -42,15 +42,15 @@ func TestQueue_Dequeue(t *testing.T) {
 		)
 	}
 
-	if len(sut.elements) != 1 {
+	if len(sut.items) != 1 {
 		t.Error("it was expecting a single record in queue")
 	}
 }
 
 func TestQueue_Peek(t *testing.T) {
 	sut := Queue[string]{
-		elements: *new([]string),
-		size:     0,
+		items: *new([]string),
+		size:  0,
 	}
 
 	_, err := sut.Peek()
@@ -77,35 +77,35 @@ func TestQueue_Peek(t *testing.T) {
 		)
 	}
 
-	if len(sut.elements) != 2 {
+	if len(sut.items) != 2 {
 		t.Error("it was expecting all records in the queue after peek")
 	}
 }
 
 func TestQueue_Clear(t *testing.T) {
 	sut := Queue[string]{
-		elements: *new([]string),
-		size:     0,
+		items: *new([]string),
+		size:  0,
 	}
 
 	sut.Enqueue("syniol")
 	sut.Enqueue("limited")
 
-	if len(sut.elements) != 2 {
+	if len(sut.items) != 2 {
 		t.Error("it was expecting two records in queue")
 	}
 
 	sut.Clear()
 
-	if len(sut.elements) != 0 {
+	if len(sut.items) != 0 {
 		t.Error("it was expecting no record in the queue")
 	}
 }
 
 func TestQueue_Count(t *testing.T) {
 	sut := Queue[string]{
-		elements: *new([]string),
-		size:     0,
+		items: *new([]string),
+		size:  0,
 	}
 
 	if sut.Count() != 0 {
