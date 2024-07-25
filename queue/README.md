@@ -1,4 +1,4 @@
-# Queue Data Structure Implementation in Golang
+# Queue Data Structure in Golang
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
 
 
@@ -12,13 +12,28 @@ type Queue[T any] struct {
     items []T
     size  int
 }
+
+type Queuer[T any] interface {
+    Enqueue(item T)
+    Dequeue() (item T, err error)
+    Peek() (item T, err error)
+    Count() int
+    Clear()
+}
+
+func NewQueue[T any]() Queuer[T] {
+    return &Queue[T]{
+        items: *new([]T),
+        size:  0,
+    }
+}
 ```
 
 
 ### Tests
 
 ```bash
-    go test ./queue/... -v
+go test ./queue/... -v
 ```
 
 

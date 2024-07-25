@@ -6,9 +6,9 @@ type Queue[T any] struct {
 }
 
 type Queuer[T any] interface {
-	Enqueue(items T)
-	Dequeue() (items T, err error)
-	Peek() (items T, err error)
+	Enqueue(item T)
+	Dequeue() (item T, err error)
+	Peek() (item T, err error)
 	Count() int
 	Clear()
 }
@@ -28,20 +28,20 @@ func NewQueue[T any]() Queuer[T] {
 }
 
 // Enqueue Adds an object to the end of the Queue
-func (q *Queue[T]) Enqueue(items T) {
-	q.items = append(q.items, items)
+func (q *Queue[T]) Enqueue(item T) {
+	q.items = append(q.items, item)
 	q.size = q.size + 1
 }
 
 // Dequeue Removes and returns the object at the beginning of the Queue
-func (q *Queue[T]) Dequeue() (items T, err error) {
+func (q *Queue[T]) Dequeue() (item T, err error) {
 	if q.size == 0 {
 		err = &ErrorEmptyQueue{}
 
 		return
 	}
 
-	items = q.items[0]
+	item = q.items[0]
 	q.items = q.items[1:]
 	q.size = q.size - 1
 
@@ -49,14 +49,14 @@ func (q *Queue[T]) Dequeue() (items T, err error) {
 }
 
 // Peek Returns the object at the beginning of the Queue without removing it
-func (q *Queue[T]) Peek() (items T, err error) {
+func (q *Queue[T]) Peek() (item T, err error) {
 	if q.size == 0 {
 		err = &ErrorEmptyQueue{}
 
 		return
 	}
 
-	items = q.items[0]
+	item = q.items[0]
 
 	return
 }
