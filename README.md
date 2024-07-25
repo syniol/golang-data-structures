@@ -1,6 +1,6 @@
 # Data Structures in Golang <sup><i>Fundamental Principles in Computer Science</i></sup>
 
- * [Queues](https://github.com/syniol/golang-data-structures/blob/main/queue)
+ * [Queue](https://github.com/syniol/golang-data-structures/tree/main/queue)
  * [Stacks](https://github.com/syniol/golang-data-structures/blob/main/stack.go)
  * [Graph](https://github.com/syniol/golang-data-structures/blob/main/graph.go)
  * [Arrays & Slices](https://github.com/syniol/golang-data-structures/blob/main/example_arrays_slices_test.go)
@@ -20,10 +20,9 @@
 tbc
 
 
-## Array
- * Ordered
- * Static size
- * Arrays are values by default (meaning passing a copy of variable in a function)
+## Map
+* Unordered
+* Pointer by default
 
 
 ## Slices
@@ -32,9 +31,10 @@ tbc
 * Slice's element is a pointer to an Array
 
 
-## Map
- * Unordered
- * Pointer by default
+## Array
+ * Ordered
+ * Static size
+ * Arrays are values by default (meaning passing a copy of variable in a function)
 
 
 #### Links
@@ -43,6 +43,6 @@ tbc
 
 
 ##### Credits
-Copyright &copy; 2024, Syniol Limited. All rights reserved.
-
 Author: [Hadi Tajallaei](mailto:hadi@syniol.com)
+
+Copyright &copy; 2024, Syniol Limited. All rights reserved.
