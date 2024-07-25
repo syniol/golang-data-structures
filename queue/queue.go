@@ -5,12 +5,6 @@ type Queue[T any] struct {
 	size  int
 }
 
-type ErrorEmptyQueue struct{}
-
-func (ErrorEmptyQueue) Error() string {
-	return "queue is empty"
-}
-
 type Queuer[T any] interface {
 	Enqueue(items T)
 	Dequeue() (items T, err error)
@@ -19,7 +13,13 @@ type Queuer[T any] interface {
 	Clear()
 }
 
-// NewQueue instantiates new instance of Queue Data Structure
+type ErrorEmptyQueue struct{}
+
+func (ErrorEmptyQueue) Error() string {
+	return "queue is empty"
+}
+
+// NewQueue Instantiates new instance of Queue Data Structure
 func NewQueue[T any]() Queuer[T] {
 	return &Queue[T]{
 		items: *new([]T),
