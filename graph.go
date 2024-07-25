@@ -1,19 +1,30 @@
 package data_structures
 
-type Node struct {
-	Nodes []*Node
-}
-
-func (n *Node) AddEdge(node *Node) {}
+type GraphNodeName string
 
 type Graph struct {
-	Nodes []*Node
+	Nodes []*GraphNode
+	Edges map[GraphNodeName][]*GraphEdge
 }
 
-func (g *Graph) AddNode() *Node {
-	babyNode := &Node{}
-
-	g.Nodes = append(g.Nodes, babyNode)
-
-	return babyNode
+type GraphNode struct {
+	name GraphNodeName
 }
+
+type GraphEdge struct {
+	node   GraphNode
+	weight int
+}
+
+func NewGraph() *Graph {
+	return &Graph{
+		Nodes: *new([]*GraphNode),
+		Edges: make(map[GraphNodeName][]*GraphEdge),
+	}
+}
+
+func (g *Graph) AddNode(n *GraphNode) {}
+
+func (g *Graph) AddEdge(n1, n2 *GraphNode, weight int) {}
+
+func (g *Graph) RemoveEdge(n1, n2 GraphNodeName) {}
