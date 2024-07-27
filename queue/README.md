@@ -34,7 +34,7 @@ type Queuer[T any] interface {
 __NewQueue__
 ```go
 func NewQueue[T any]() Queuer[T] {
-    return &Queue[T]{
+    return &queue[T]{
         items: *new([]T),
         size:  0,
     }
@@ -43,7 +43,7 @@ func NewQueue[T any]() Queuer[T] {
 
 
 ### Tests
-From the root of repository, please run:
+From the root of the repository, please run the following command:
 
 ```bash
 go test ./queue/... -v
