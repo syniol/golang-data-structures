@@ -1,6 +1,6 @@
 package queue
 
-type Queue[T any] struct {
+type queue[T any] struct {
 	items []T
 	size  int
 }
@@ -19,22 +19,22 @@ func (ErrorEmptyQueue) Error() string {
 	return "queue is empty"
 }
 
-// NewQueue Instantiates new instance of Queue Data Structure
+// NewQueue Instantiates new instance of queue Data Structure
 func NewQueue[T any]() Queuer[T] {
-	return &Queue[T]{
+	return &queue[T]{
 		items: *new([]T),
 		size:  0,
 	}
 }
 
-// Enqueue Adds an object to the end of the Queue
-func (q *Queue[T]) Enqueue(item T) {
+// Enqueue Adds an object to the end of the queue
+func (q *queue[T]) Enqueue(item T) {
 	q.items = append(q.items, item)
 	q.size = q.size + 1
 }
 
-// Dequeue Removes and returns the object at the beginning of the Queue
-func (q *Queue[T]) Dequeue() (item T, err error) {
+// Dequeue Removes and returns the object at the beginning of the queue
+func (q *queue[T]) Dequeue() (item T, err error) {
 	if q.size == 0 {
 		err = &ErrorEmptyQueue{}
 
@@ -48,8 +48,8 @@ func (q *Queue[T]) Dequeue() (item T, err error) {
 	return
 }
 
-// Peek Returns the object at the beginning of the Queue without removing it
-func (q *Queue[T]) Peek() (item T, err error) {
+// Peek Returns the object at the beginning of the queue without removing it
+func (q *queue[T]) Peek() (item T, err error) {
 	if q.size == 0 {
 		err = &ErrorEmptyQueue{}
 
@@ -61,13 +61,13 @@ func (q *Queue[T]) Peek() (item T, err error) {
 	return
 }
 
-// Count Gets the number of items contained in the Queue
-func (q *Queue[T]) Count() int {
+// Count Gets the number of items contained in the queue
+func (q *queue[T]) Count() int {
 	return q.size
 }
 
-// Clear Removes all objects from the Queue
-func (q *Queue[T]) Clear() {
+// Clear Removes all objects from the queue
+func (q *queue[T]) Clear() {
 	q.items = *new([]T)
 	q.size = 0
 }

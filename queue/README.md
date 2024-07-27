@@ -2,17 +2,26 @@
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
 
 
+## Generic
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+
+
 ## Encapsulation
 In this example you could see `NewQueue`, produces a `struct` matching `Queuer[T any]` interface.
 This is by design to avoid accessing `elements` and `size` of the queue. However, `NewQueue` is not 
 utilised inside tests to examine the actual value for `size` and elements in the queue.
 
+
+__Queue Struct__
 ```go
-type Queue[T any] struct {
+type queue[T any] struct {
     items []T
     size  int
 }
+```
 
+__Queuer Interface__
+```go
 type Queuer[T any] interface {
     Enqueue(item T)
     Dequeue() (item T, err error)
@@ -20,7 +29,10 @@ type Queuer[T any] interface {
     Count() int
     Clear()
 }
+```
 
+__NewQueue__
+```go
 func NewQueue[T any]() Queuer[T] {
     return &Queue[T]{
         items: *new([]T),
@@ -31,6 +43,7 @@ func NewQueue[T any]() Queuer[T] {
 
 
 ### Tests
+From the root of repository, please run:
 
 ```bash
 go test ./queue/... -v

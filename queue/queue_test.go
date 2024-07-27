@@ -3,7 +3,7 @@ package queue
 import "testing"
 
 func TestQueue_Enqueue(t *testing.T) {
-	sut := Queue[string]{
+	sut := queue[string]{
 		items: *new([]string),
 		size:  0,
 	}
@@ -17,7 +17,7 @@ func TestQueue_Enqueue(t *testing.T) {
 }
 
 func TestQueue_Dequeue(t *testing.T) {
-	sut := Queue[string]{
+	sut := queue[string]{
 		items: *new([]string),
 		size:  0,
 	}
@@ -48,7 +48,7 @@ func TestQueue_Dequeue(t *testing.T) {
 }
 
 func TestQueue_Peek(t *testing.T) {
-	sut := Queue[string]{
+	sut := queue[string]{
 		items: *new([]string),
 		size:  0,
 	}
@@ -83,7 +83,7 @@ func TestQueue_Peek(t *testing.T) {
 }
 
 func TestQueue_Clear(t *testing.T) {
-	sut := Queue[string]{
+	sut := queue[string]{
 		items: *new([]string),
 		size:  0,
 	}
@@ -103,7 +103,7 @@ func TestQueue_Clear(t *testing.T) {
 }
 
 func TestQueue_Count(t *testing.T) {
-	sut := Queue[string]{
+	sut := queue[string]{
 		items: *new([]string),
 		size:  0,
 	}
