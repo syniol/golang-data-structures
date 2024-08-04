@@ -1,4 +1,4 @@
-package data_structures
+package heap
 
 import "golang.org/x/exp/constraints"
 

@@ -1,13 +1,13 @@
-package data_structures
+package stack
 
-type Stack[T any] struct {
+type stack[T any] struct {
 	elements []T
 	count    int
 }
 
-type StackEmptyError struct{}
+type ErrorEmptyStack struct{}
 
-func (StackEmptyError) Error() string {
+func (ErrorEmptyStack) Error() string {
 	return "stack is empty"
 }
 
@@ -18,16 +18,16 @@ type Stacker[T any] interface {
 	Count() int
 }
 
-// NewStack instantiates new instance of Stack Data Structure
+// NewStack instantiates new instance of stack Data Structure
 func NewStack[T any]() Stacker[T] {
-	return &Stack[T]{
+	return &stack[T]{
 		elements: *new([]T),
 		count:    0,
 	}
 }
 
-// Push Inserts an object at the top of the Stack.
-func (s *Stack[T]) Push(el T) {
+// Push Inserts an object at the top of the stack.
+func (s *stack[T]) Push(el T) {
 	if s.count == 0 {
 		s.elements = append(s.elements, el)
 		s.count = 1
@@ -43,10 +43,10 @@ func (s *Stack[T]) Push(el T) {
 	s.count = s.count + 1
 }
 
-// Peek Returns the object at the top of the Stack without removing it.
-func (s *Stack[T]) Peek() (el T, err error) {
+// Peek Returns the object at the top of the stack without removing it.
+func (s *stack[T]) Peek() (el T, err error) {
 	if s.count == 0 {
-		err = &StackEmptyError{}
+		err = &ErrorEmptyStack{}
 
 		return
 	}
@@ -56,10 +56,10 @@ func (s *Stack[T]) Peek() (el T, err error) {
 	return
 }
 
-// Pop Removes and returns the object at the top of the Stack
-func (s *Stack[T]) Pop() (el T, err error) {
+// Pop Removes and returns the object at the top of the stack
+func (s *stack[T]) Pop() (el T, err error) {
 	if s.count == 0 {
-		err = &StackEmptyError{}
+		err = &ErrorEmptyStack{}
 
 		return
 	}
@@ -73,6 +73,6 @@ func (s *Stack[T]) Pop() (el T, err error) {
 }
 
 // Count returns current number of elements inside the stack
-func (s *Stack[T]) Count() int {
+func (s *stack[T]) Count() int {
 	return s.count
 }
