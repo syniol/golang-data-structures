@@ -1,8 +1,9 @@
 package queue_test
 
 import (
-	"data-structures/queue"
 	"fmt"
+
+	"data-structures/queue"
 )
 
 type QueueElement struct {
