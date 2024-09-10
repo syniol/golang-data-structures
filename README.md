@@ -5,7 +5,7 @@ that I might have not included here. I will do my best to research and create a 
 This could take time and more patience.
 
  * [Queue](https://github.com/syniol/golang-data-structures/tree/main/queue)
- * [Stacks](https://github.com/syniol/golang-data-structures/tree/main/queue)
+ * [Stack](https://github.com/syniol/golang-data-structures/tree/main/stack)
  * [Graph](https://github.com/syniol/golang-data-structures/tree/main/graph)
  * [Heap](https://github.com/syniol/golang-data-structures/tree/main/heap)
  * [Array & Slice](https://github.com/syniol/golang-data-structures/blob/main/example_array_slice_test.go)
