@@ -2,7 +2,7 @@ package stack
 
 type stack[T any] struct {
 	elements []T
-	count    int
+	size     int
 }
 
 type ErrorEmptyStack struct{}
@@ -22,15 +22,15 @@ type Stacker[T any] interface {
 func NewStack[T any]() Stacker[T] {
 	return &stack[T]{
 		elements: *new([]T),
-		count:    0,
+		size:     0,
 	}
 }
 
 // Push Inserts an object at the top of the stack.
 func (s *stack[T]) Push(el T) {
-	if s.count == 0 {
+	if s.size == 0 {
 		s.elements = append(s.elements, el)
-		s.count = 1
+		s.size = 1
 
 		return
 	}
@@ -38,14 +38,14 @@ func (s *stack[T]) Push(el T) {
 	currentHead := s.elements[0]
 
 	s.elements[0] = el
-	s.elements[s.count] = currentHead
+	s.elements[s.size] = currentHead
 
-	s.count = s.count + 1
+	s.size = s.size + 1
 }
 
 // Peek Returns the object at the top of the stack without removing it.
 func (s *stack[T]) Peek() (el T, err error) {
-	if s.count == 0 {
+	if s.size == 0 {
 		err = &ErrorEmptyStack{}
 
 		return
@@ -58,7 +58,7 @@ func (s *stack[T]) Peek() (el T, err error) {
 
 // Pop Removes and returns the object at the top of the stack
 func (s *stack[T]) Pop() (el T, err error) {
-	if s.count == 0 {
+	if s.size == 0 {
 		err = &ErrorEmptyStack{}
 
 		return
@@ -67,12 +67,12 @@ func (s *stack[T]) Pop() (el T, err error) {
 	el = s.elements[0]
 	s.elements = s.elements[1:]
 
-	s.count = s.count - 1
+	s.size = s.size - 1
 
 	return
 }
 
 // Count returns current number of elements inside the stack
 func (s *stack[T]) Count() int {
-	return s.count
+	return s.size
 }
