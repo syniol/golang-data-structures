@@ -29,7 +29,7 @@ this is due to CPU and Memory utilisation during the calculation when stack exce
 
 
 ## Encapsulation
-In this example you could see `NewStack`, produces a private `struct` matching `Queuer[T any]` interface.
+In this example you could see `NewStack`, produces a private `struct` matching `Stacker[T any]` interface.
 This is by design to avoid accessing `items` and `size` of the stack. However, `NewStack` is not
 utilised inside tests to examine the actual value for `size` and elements in the stack.
 
