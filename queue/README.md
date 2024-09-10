@@ -1,14 +1,16 @@
 # Queue Data Structure in Golang
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+Queue Data Structure  is a virtual storage in memory in which the elements are inserted in FIFO (First-In-First-Out). 
+The application of queue could be an operating system allocates of tasks. In modern Software architecture, could be 
+utilised for API Gateway or Space-Based Architecture Pattern.
 
 
 ## Generic
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+
 
 
 ## Processing & Memory Optimisation
-You might have noticed the used of size isnetad  of the use len built in lubtaty in go,
-this is due to cpu and memory utilisaton during the calculation when queue excdeds certai number
+You might have noticed the use of size instead of the use `len`; the built-in library in Go,
+this is due to cpu and memory utilisation during the calculation when queue exceeds a high number.
 
 
 ## Encapsulation
