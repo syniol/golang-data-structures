@@ -12,7 +12,7 @@ func TestQueue_Push(t *testing.T) {
 	sut.Push("limited")
 
 	if len(sut.elements) != 2 {
-		t.Error("it was expecting two records in queue")
+		t.Error("it was expecting two records in stack")
 	}
 }
 
@@ -37,13 +37,13 @@ func TestQueue_Pop(t *testing.T) {
 
 	if el != firstItemInQueue {
 		t.Errorf(
-			"it was expecting the first element '%s' in a queue to be dequeued",
+			"it was expecting the first element '%s' in a stack to be popped",
 			firstItemInQueue,
 		)
 	}
 
 	if len(sut.elements) != 1 {
-		t.Error("it was expecting a single record in queue")
+		t.Error("it was expecting a single record in stack")
 	}
 }
 
@@ -58,8 +58,8 @@ func TestQueue_Pop_Error(t *testing.T) {
 		t.Error("it was expecting an error")
 	}
 
-	if err.Error() != "queue is empty" {
-		t.Error("it was expecting an error reporting an empty queue")
+	if err.Error() != "stack is empty" {
+		t.Error("it was expecting an error reporting an empty stack")
 	}
 }
 
@@ -88,13 +88,13 @@ func TestQueue_Peek(t *testing.T) {
 
 	if item != firstItemInQueue {
 		t.Errorf(
-			"it was expecting the first element '%s' in a queue to be returned",
+			"it was expecting the first element '%s' in a stack to be returned",
 			firstItemInQueue,
 		)
 	}
 
 	if len(sut.elements) != 2 {
-		t.Error("it was expecting all records in the queue after peek")
+		t.Error("it was expecting all records in the stack after peek")
 	}
 }
 
@@ -105,13 +105,13 @@ func TestQueue_Count(t *testing.T) {
 	}
 
 	if sut.Count() != 0 {
-		t.Error("it was expecting no record in the queue")
+		t.Error("it was expecting no record in the stack")
 	}
 
 	sut.Push("syniol")
 	sut.Push("limited")
 
 	if sut.Count() != 2 {
-		t.Error("it was expecting two records in the queue")
+		t.Error("it was expecting two records in the stack")
 	}
 }
