@@ -47,6 +47,22 @@ func TestQueue_Dequeue(t *testing.T) {
 	}
 }
 
+func TestQueue_Dequeue_Error(t *testing.T) {
+	sut := queue[string]{
+		items: *new([]string),
+		size:  0,
+	}
+
+	_, err := sut.Dequeue()
+	if err == nil {
+		t.Error("it was expecting an error")
+	}
+
+	if err.Error() != "queue is empty" {
+		t.Error("it was expecting an error reporting an empty queue")
+	}
+}
+
 func TestQueue_Peek(t *testing.T) {
 	sut := queue[string]{
 		items: *new([]string),
