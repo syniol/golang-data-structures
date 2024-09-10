@@ -4,8 +4,22 @@ The application of queue could be an operating system allocates of tasks. In mod
 utilised for API Gateway or Space-Based Architecture Pattern.
 
 
-## Generic
+## Generics
+You will require to use a Go version that has the generic implementation. This allowed me to ensure, this code could
+be utilised in various applications where type of elements inside the queue could be programmed.
 
+```go
+type QueueElement struct {
+    Body string
+}
+
+myQueue := queue.NewQueue[*QueueElement]()
+myQueue.Enqueue(&QueueElement{
+    Body: "{}",
+})
+```
+
+you could find an example of this inside `example_test.go`.
 
 
 ## Processing & Memory Optimisation
