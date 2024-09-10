@@ -1,18 +1,22 @@
 # Data Structures in Golang <sup><i>Fundamental Principles in Computer Science</i></sup>
-
+In this repository, I'm going to implement text book principles we learned at university, for Data Structure. It was 
+mostly done in Java, and C#. However, I will demonstrate the implementation in Golang. There may be some data structure 
+that I might have not included here. I will do my best to research and create a proper jargon for Data Structures in Golang.
+This could take time and more patience.
 
  * [Queue](https://github.com/syniol/golang-data-structures/tree/main/queue)
- * [Stacks](https://github.com/syniol/golang-data-structures/blob/main/stack.go)
- * [Graph](https://github.com/syniol/golang-data-structures/blob/main/graph.go)
- * [Arrays & Slices](https://github.com/syniol/golang-data-structures/blob/main/example_arrays_slices_test.go)
+ * [Stacks](https://github.com/syniol/golang-data-structures/tree/main/queue)
+ * [Graph](https://github.com/syniol/golang-data-structures/tree/main/graph)
+ * [Heap](https://github.com/syniol/golang-data-structures/tree/main/heap)
+ * [Array & Slice](https://github.com/syniol/golang-data-structures/blob/main/example_array_slice_test.go)
 
 
-## Queues
+## Queue
  * FIFO (first-in-first-out)
  * Elements added at the back of queue
 
 
-## Stacks
+## Stack
  * LIFO (last-in-first-out)
  * Elements added at the top of the queue
 
@@ -26,7 +30,7 @@ tbc
  * Pointer by default
 
 
-## Slices
+## Array & Slice
  * Ordered
  * Dynamic size
  * Slice's element is a pointer to an Array
