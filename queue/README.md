@@ -28,7 +28,7 @@ you could find an example of this inside `example_test.go`.
 
 ## Processing & Memory Optimisation
 You might have noticed the use of size instead of the use `len`; the built-in library in Go,
-this is due to cpu and memory utilisation during the calculation when queue exceeds a high number.
+this is due to CPU and Memory utilisation during the calculation when queue exceeds a high number.
 
 
 ## Encapsulation

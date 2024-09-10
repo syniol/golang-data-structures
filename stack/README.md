@@ -4,6 +4,10 @@ inserted inside the stack is removed first. You can think of the stack data stru
 Applications of Stack Data Structures could be: Recursion, Depth-First Search (DFS), Operating System Operation Tasks, and 
 function Calls.
 
+<div style="text-align:center; width: 100%">
+    <img src="https://github.com/syniol/golang-data-structures/blob/main/stack/doc/stack-data-structure.png?raw=true">
+</div>
+
 
 ## Generics
 You will require to use a Go version that has the generic implementation. This allowed me to ensure, this code could
