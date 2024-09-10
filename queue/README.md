@@ -3,6 +3,8 @@ Queue Data Structure  is a virtual storage in memory in which the elements are i
 The application of queue could be an operating system allocates of tasks. In modern Software architecture, could be 
 utilised for API Gateway or Space-Based Architecture Pattern.
 
+![Queue Data Structure Diagram](doc/queue-data-structure.png)
+
 
 ## Generics
 You will require to use a Go version that has the generic implementation. This allowed me to ensure, this code could
