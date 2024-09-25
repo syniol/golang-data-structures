@@ -109,11 +109,19 @@ func ExampleMapAccessingNonExistentElement() {
 		"name":     "Syniol Limited",
 		"location": "London",
 	}
+	// catch or finally
+	defer func() {
+		// catch
+		if err := recover(); err == nil {
+			fmt.Println("no error detected for nil pointer")
+		}
+	}()
 
 	fmt.Println(mapUnderTest["website"])
 
 	// Output:
 	// <nil>
+	// no error detected for nil pointer
 }
 
 func ExampleMapToJSON() {
@@ -136,6 +144,7 @@ func ExampleMapWithoutAnyElementIteration() {
 		fmt.Println(k)
 		fmt.Println(v)
 	}
+
 	// Output:
 	//
 }
@@ -207,4 +216,40 @@ func ExampleMapElementChangeWithoutPointerWithValue() {
 	// Output:
 	// Miami
 	// Length of map is: 3
+}
+
+func ExampleMapDeletingExistingElement() {
+	mapUnderTest := map[string]any{
+		"name":     "Syniol Limited",
+		"location": "London",
+		"website":  "https://syniol.com",
+	}
+
+	delete(mapUnderTest, "location")
+
+	fmt.Println(mapUnderTest)
+
+	// Output:
+	// map[name:Syniol Limited website:https://syniol.com]
+}
+
+func ExampleMapDeletingNonExistentElement() {
+	mapUnderTest := map[string]any{
+		"name":     "Syniol Limited",
+		"location": "London",
+		"website":  "https://syniol.com",
+	}
+
+	// catch or finally
+	defer func() {
+		// catch
+		if err := recover(); err == nil {
+			fmt.Println("no error detected for nil pointer")
+		}
+	}()
+
+	delete(mapUnderTest, "url")
+
+	// Output:
+	// no error detected for nil pointer
 }
