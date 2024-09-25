@@ -1,4 +1,4 @@
-# Data Structures in Golang <sup><i>Fundamental Principles in Computer Science</i></sup>
+# Data Structures in Golang <sup style="font-size: 12px;font-weight: lighter;"><i>Fundamental Principles in Computer Science</i></sup></span>
 In this repository, I'm going to implement text book principles we learned at university, for Data Structure. It was 
 mostly done in Java, and C#. However, I will demonstrate the implementation in Golang. There may be some data structure 
 that I might have not included here. I will do my best to research and create a proper jargon for Data Structures in Golang.
