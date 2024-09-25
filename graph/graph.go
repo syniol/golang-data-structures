@@ -1,30 +1,44 @@
 package graph
 
-type GraphNodeName string
+type NodeName string
 
 type Graph struct {
-	Nodes []*GraphNode
-	Edges map[GraphNodeName][]*GraphEdge
+	Nodes []*Node
+	Edges map[NodeName][]*Edge
 }
 
-type GraphNode struct {
-	name GraphNodeName
+type Node struct {
+	name NodeName
 }
 
-type GraphEdge struct {
-	node   GraphNode
+type Edge struct {
+	node   *Node
 	weight int
 }
 
 func NewGraph() *Graph {
 	return &Graph{
-		Nodes: *new([]*GraphNode),
-		Edges: make(map[GraphNodeName][]*GraphEdge),
+		Nodes: *new([]*Node),
+		Edges: make(map[NodeName][]*Edge),
 	}
 }
 
-func (g *Graph) AddNode(n *GraphNode) {}
+func (g *Graph) AddNode(n *Node) {
+	g.Nodes = append(g.Nodes, n)
+}
 
-func (g *Graph) AddEdge(n1, n2 *GraphNode, weight int) {}
+func (g *Graph) RemoveNode(nodeName NodeName) {}
 
-func (g *Graph) RemoveEdge(n1, n2 GraphNodeName) {}
+func (g *Graph) AddEdge(n1, n2 *Node, weight int) {
+	g.Edges[n1.name] = append(g.Edges[n1.name], &Edge{
+		node:   n2,
+		weight: weight,
+	})
+
+	g.Edges[n2.name] = append(g.Edges[n2.name], &Edge{
+		node:   n1,
+		weight: weight,
+	})
+}
+
+func (g *Graph) RemoveEdge(n1, n2 NodeName) {}
