@@ -7,6 +7,7 @@ This could take time and more patience.
  * [Queue](https://github.com/syniol/golang-data-structures/tree/main/queue)
  * [Stack](https://github.com/syniol/golang-data-structures/tree/main/stack)
  * [Array & Slice](https://github.com/syniol/golang-data-structures/blob/main/example_array_slice_test.go)
+ * [Map](https://github.com/syniol/golang-data-structures/blob/main/example_map_test.go)
 
 
 ## Queue
