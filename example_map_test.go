@@ -4,38 +4,32 @@ import (
 	"fmt"
 )
 
-//var sss map[string]string
-//
-//
-//
-//ssss := new(map[string]string)
-//
-//aaaa := make(map[string]string, 10)
-
 func ExampleMapCreationWithRawAssignment() {
 	var mapUnderTest map[string]string
 
-	defer func() { //catch or finally
-		if err := recover(); err != nil { //catch
-			fmt.Println(err)
+	// catch or finally
+	defer func() {
+		// catch
+		if err := recover(); err != nil {
+			fmt.Println("error", err)
 		}
 	}()
 
 	mapUnderTest["company"] = "Syniol Limited"
 
 	// Output:
-	// assignment to entry in nil map
+	// error assignment to entry in nil map
 }
 
 func ExampleMapCreationWithAssignment() {
-	var mapUnderTest map[string]string
-
-	mapUnderTest = map[string]string{
+	mapUnderTest := map[string]string{
 		"location": "London",
 	}
 
-	defer func() { //catch or finally
-		if err := recover(); err != nil { //catch
+	// catch or finally
+	defer func() {
+		// catch
+		if err := recover(); err != nil {
 			fmt.Println(err)
 		}
 	}()
@@ -48,6 +42,38 @@ func ExampleMapCreationWithAssignment() {
 	// map[company:Syniol Limited location:London]
 }
 
-func ExampleMapCreationWith() {
+func ExampleMapCreationWithNew() {
+	mapUnderTest := *new(map[string]string)
 
+	// catch or finally
+	defer func() {
+		// catch
+		if err := recover(); err != nil {
+			fmt.Println("error", err)
+		}
+	}()
+
+	mapUnderTest["company"] = "Syniol Limited"
+
+	// Output:
+	// error assignment to entry in nil map
+}
+
+func ExampleMapCreationWithMake() {
+	mapUnderTest := make(map[string]string)
+
+	// catch or finally
+	defer func() {
+		// catch
+		if err := recover(); err != nil {
+			fmt.Println("error", err)
+		}
+	}()
+
+	mapUnderTest["company"] = "Syniol Limited"
+
+	fmt.Println(mapUnderTest)
+
+	// Output:
+	// map[company:Syniol Limited]
 }
