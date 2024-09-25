@@ -44,6 +44,10 @@ tbc
 #### Links
  * [Microsoft .NET API Queue](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.queue-1)
  * [Microsoft .NET API Stack](https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack)
+ * [Google Golang Specification Map types](https://go.dev/ref/spec#Map_types)
+ * [Google Go maps in Action](https://go.dev/blog/maps)
+ * [Google Golang Specification Array types](https://go.dev/ref/spec#Array_types)
+ * [Google Golang Specification Slice types](https://go.dev/ref/spec#Slice_types)
 
 
 ##### Credits
