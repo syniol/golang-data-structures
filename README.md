@@ -1,4 +1,4 @@
-# Data Structures in Golang <sup style="font-size: 12px;font-weight: lighter;"><i>Fundamental Principles in Computer Science</i></sup></span>
+# Data Structures in Golang <sup><i>Fundamental Principles in Computer Science</i></sup></span>
 In this repository, I'm going to implement text book principles we learned at university, for Data Structure. It was 
 mostly done in Java, and C#. However, I will demonstrate the implementation in Golang. There may be some data structure 
 that I might have not included here. I will do my best to research and create a proper jargon for Data Structures in Golang.
@@ -6,8 +6,6 @@ This could take time and more patience.
 
  * [Queue](https://github.com/syniol/golang-data-structures/tree/main/queue)
  * [Stack](https://github.com/syniol/golang-data-structures/tree/main/stack)
- * [Graph](https://github.com/syniol/golang-data-structures/tree/main/graph)
- * [Heap](https://github.com/syniol/golang-data-structures/tree/main/heap)
  * [Array & Slice](https://github.com/syniol/golang-data-structures/blob/main/example_array_slice_test.go)
 
 
